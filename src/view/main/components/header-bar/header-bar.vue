@@ -1,12 +1,27 @@
 <template>
   <div class="header-bar">
-    <sider-trigger :collapsed="collapsed" icon="md-menu" @on-change="handleCollpasedChange"></sider-trigger>
-    <!--<custom-bread-crumb show-icon style="margin-left: 30px;" :list="breadCrumbList"></custom-bread-crumb>-->
-    <system-list-bar show-icon style="margin-left: 30px;" :list="breadCrumbList"></system-list-bar>
+    <Layout style="overflow:hidden;height:60px;">
+      <Sider width="50" >
+        <sider-trigger :collapsed="collapsed" icon="md-menu" @on-change="handleCollpasedChange"></sider-trigger>
+      </Sider>
+      <Content>
+        <Layout>
+          <Content>
+            <system-list-bar show-icon style="width:100%;" :list="breadCrumbList"></system-list-bar>
+          </Content>
+          <Sider >
+            <div class="custom-content-con">
+              <slot></slot>
+            </div>
+          </Sider>
+        </Layout>
+      </Content>
+    </Layout>
 
-    <div class="custom-content-con">
-      <slot></slot>
-    </div>
+    <!--<custom-bread-crumb show-icon style="margin-left: 30px;" :list="breadCrumbList"></custom-bread-crumb>-->
+
+
+
   </div>
 </template>
 <script>

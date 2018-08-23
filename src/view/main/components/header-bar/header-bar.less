@@ -6,9 +6,34 @@
     float: right;
     height: auto;
     padding-right: 20px;
-    line-height: 64px;
+    line-height: 60px;
     & > *{
       float: right;
+    }
+  }
+  .ivu-layout-sider{
+    background:transparent;
+  }
+  & > .ivu-layout.ivu-layout-has-sider > .ivu-layout-sider{
+    width: 50px!important;
+    min-width:auto!important;
+  }
+  .ivu-layout-sider-children{
+    height:69px;
+  }
+  .ivu-layout-content{
+    overflow:visible;
+    .ivu-layout-sider{
+      height:54px;
+    }
+  }
+  .ivu-layout{
+    .ivu-layout-content{
+      height:54px;
+      overflow:hidden;
+      .ivu-layout-sider{
+        position: initial;
+      }
     }
   }
 }
