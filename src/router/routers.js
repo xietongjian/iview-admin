@@ -53,6 +53,80 @@ export default [
     }
   },
   {
+    path: '/privilege',
+    name: 'privilege',
+    meta: {
+      icon: 'logo-buffer',
+      title: '权限系统'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'system',
+        name: 'system',
+        meta: {
+          icon: 'md-trending-up',
+          title: '系统管理'
+        },
+        component: () => import('@/view/privilege/system.vue')
+      },
+      {
+        path: 'modules',
+        name: 'modules',
+        meta: {
+          icon: 'md-trending-up',
+          title: '模块管理'
+        },
+        component: () => import('@/view/privilege/modules.vue')
+      },
+      {
+        path: 'depts',
+        name: 'depts',
+        meta: {
+          icon: 'md-trending-up',
+          title: '部门管理'
+        },
+        component: () => import('@/view/privilege/depts.vue')
+      },
+      {
+        path: 'users',
+        name: 'users',
+        meta: {
+          icon: 'md-trending-up',
+          title: '用户管理'
+        },
+        component: () => import('@/view/privilege/users.vue')
+      },
+      {
+        path: 'acls',
+        name: 'acls',
+        meta: {
+          icon: 'md-trending-up',
+          title: '权限值管理'
+        },
+        component: () => import('@/view/privilege/acls.vue')
+      },
+      {
+        path: 'roles',
+        name: 'roles',
+        meta: {
+          icon: 'md-trending-up',
+          title: '角色管理'
+        },
+        component: () => import('@/view/privilege/roles.vue')
+      },
+      {
+        path: 'company',
+        name: 'company',
+        meta: {
+          icon: 'md-trending-up',
+          title: '公司管理'
+        },
+        component: () => import('@/view/components/count-to/count-to.vue')
+      }
+    ]
+  },
+  {
     path: '/join',
     name: 'join',
     component: Main,
