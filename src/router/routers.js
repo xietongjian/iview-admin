@@ -92,7 +92,7 @@ export default [
         path: 'users',
         name: 'users',
         meta: {
-          icon: 'md-trending-up',
+          icon: 'person-stalker',
           title: '用户管理'
         },
         component: () => import('@/view/privilege/users.vue')

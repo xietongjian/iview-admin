@@ -1,16 +1,23 @@
 <template>
-  <div>
+  <div class="user-list">
     <div >
       <Layout>
         <Sider>
-          <template>
-            <Tree :data="data1"></Tree>
-          </template>
+          <Card>
+            <p slot="title">组织架构</p>
+            <template>
+              <Tree :data="data1"></Tree>
+            </template>
+          </Card>
         </Sider>
         <Layout>
-          <Header>Header</Header>
           <Content>
             <Card>
+              <i-button type="primary" icon="ios-add" >添加</i-button>
+              <Icon type="chevron-left"></Icon>
+              <i-button type="primary" icon="ios-add">修改</i-button>
+              <i-button type="warning" icon="ios-delete"><Icon type="android-delete"></Icon>删除</i-button>
+
               <BaseList
                 ref="tables"
                 searchable
@@ -43,13 +50,14 @@ export default {
   data () {
     return {
       columns: [
-        {title: '系统图标', key: 'name', sortable: true},
-        {title: '系统名称', key: 'email', editable: true},
-        {title: '系统标识', key: 'sn', editable: true},
-        {title: 'URL前缀', key: 'url', editable: true},
-        {title: '排序号', key: 'sortNo', editable: true},
-        {title: '备注', key: 'remark', editable: true},
-        {title: '创建时间', key: 'createTime'},
+        {title: '姓名', key: 'name', sortable: true},
+        {title: '工号', key: 'userNo', editable: true},
+        {title: '公司', key: 'company', editable: true},
+        {title: '部门', key: 'department', editable: true},
+        {title: '角色', key: 'roles', editable: true},
+        {title: '手机', key: 'mobile', editable: true},
+        {title: '邮箱', key: 'email', editable: true},
+        {title: '备注', key: 'remark'},
         {
           title: '操作',
           key: 'handle',
@@ -75,30 +83,30 @@ export default {
       tableData: [],
       data1: [
         {
-          title: 'parent 1',
+          title: '亚厦股份',
           expand: true,
           children: [
             {
-              title: 'parent 1-1',
+              title: '亚厦装饰',
               expand: true,
               children: [
                 {
-                  title: 'leaf 1-1-1'
+                  title: '信息部'
                 },
                 {
-                  title: 'leaf 1-1-2'
+                  title: '技术开发部'
                 }
               ]
             },
             {
-              title: 'parent 1-2',
+              title: '亚厦蘑菇加',
               expand: true,
               children: [
                 {
-                  title: 'leaf 1-2-1'
+                  title: '平台中心'
                 },
                 {
-                  title: 'leaf 1-2-1'
+                  title: '产品规划部'
                 }
               ]
             }
@@ -121,5 +129,7 @@ export default {
 </script>
 
 <style>
-
+.user-list .ivu-layout-sider, .user-list .ivu-layout-header{
+  background:white;
+}
 </style>
