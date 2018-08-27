@@ -5,10 +5,10 @@
     <div class="main" :class="{'main-hide-text': shrink}">
         <div class="sidebar-menu-con" :style="{width: shrink?'60px':'200px', overflow: shrink ? 'visible' : 'auto'}">
             <scroll-bar ref="scrollBar">
-                <shrinkable-menu 
+                <shrinkable-menu
                     :shrink="shrink"
                     @on-change="handleSubmenuChange"
-                    :theme="menuTheme" 
+                    :theme="menuTheme"
                     :before-push="beforePush"
                     :open-names="openedSubmenuArr"
                     :menu-list="menuList">
@@ -36,7 +36,7 @@
                     <lock-screen></lock-screen>
                     <message-tip v-model="mesCount"></message-tip>
                     <theme-switch></theme-switch>
-                    
+
                     <div class="user-dropdown-menu-con">
                         <Row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
                             <Dropdown transfer trigger="click" @on-click="handleClickUserDropdown">
@@ -78,7 +78,7 @@
     import Cookies from 'js-cookie';
     import util from '@/libs/util.js';
     import scrollBar from '@/views/my-components/scroll-bar/vue-scroller-bars';
-    
+
     export default {
         components: {
             shrinkableMenu,
@@ -204,6 +204,7 @@
         },
         mounted () {
             this.init();
+
             window.addEventListener('resize', this.scrollBarResize);
         },
         created () {
